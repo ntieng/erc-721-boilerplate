@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <script src="https://cdn.jsdelivr.net/npm/web3@latest/dist/web3.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <script src="./index.js"></script>
+  <title>HTML5 Web3.js Boilerplate</title>
+</head>
+
+<body>
+  <div class="container">
+    <br /><br />
+    <p id="wallet-address"></p>
+    <p id="chain-id"></p>
+    <p id="contract-address"></p>
+    <p id="contract-name"></p>
+    <p id="token-symbol"></p>
+    <p id="token-decimal"></p>
+    <br />
+    <button type="button" class="btn btn-primary" id="connect">Connect</button>
+    <br /><br />
+    <form class="form-inline">
+      <button type="button" class="btn btn-success" id="mint">Mint</button>
+      <div class="form-group mx-sm-3 mb-2">
+        <input type="text" class="form-control" id="receiver-address" placeholder="Receiver Address">
+        <input type="text" class="form-control" id="mint-id" placeholder="Token Id">
+      </div>
+    </form>
+    <br />
+    <form class="form-inline">
+      <button type="button" class="btn btn-success" id="transfer">Transfer</button>
+      <div class="form-group mx-sm-3 mb-2">
+        <input type="text" class="form-control" id="transfer-address" placeholder="Transfer Address">
+        <input type="text" class="form-control" id="transfer-amount" placeholder="Amount">
+      </div>
+    </form>
+    <br /><br />
+    <ul class="info"></ul>
+  </div>
+</body>
+
+</html>

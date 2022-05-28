@@ -1,0 +1,50 @@
+{
+  "name": "smart-contract-boilerplate",
+  "version": "1.0.0",
+  "description": "",
+  "main": "hardhat.config.ts",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "hardhat-clear-compiled-contracts": "powershell if(test-path './cache') {remove-item './cache' -force -recurse} && powershell if(test-path './artifacts') {remove-item './artifacts' -force -recurse} && powershell if(test-path './typechain-types') {remove-item './typechain-types' -force -recurse}",
+    "hardhat-compile-contracts": "npx hardhat clean && npx hardhat compile",
+    "hardhat-deploy-contracts": "npx hardhat --network rinkeby run scripts/deploySimple721.ts",
+    "hardhat-test": "npx hardhat test test/test_contract_call.ts",
+    "hardhat-compile-test": "npx hardhat compile && npx hardhat test",
+    "hardhat-flatten": "npx hardhat flatten contracts/Simple721.sol > flatten/Simple721_Flatten.sol",
+    "hardhat-verify": "npx hardhat verify --network rinkeby --contract contracts/Token721.sol:Token721 0x305cf2a95501CbfBFe7b603273352BF02D67b568 prod.com/ test.com/ ",
+    "hardhat-check-size": "npx hardhat size-contracts"
+  },
+  "author": "",
+  "license": "ISC",
+  "homepage": "",
+  "dependencies": {
+    "@nomiclabs/hardhat-ethers": "^2.0.3",
+    "@nomiclabs/hardhat-etherscan": "^2.1.8",
+    "@nomiclabs/hardhat-waffle": "^2.0.1",
+    "@openzeppelin/contracts": "^4.4.1",
+    "@openzeppelin/contracts-upgradeable": "^4.4.1",
+    "@openzeppelin/hardhat-upgrades": "^1.12.0",
+    "@openzeppelin/truffle-upgrades": "^1.11.0",
+    "@truffle/hdwallet-provider": "^2.0.0",
+    "@typechain/ethers-v5": "^8.0.5",
+    "@typechain/hardhat": "^3.1.0",
+    "dotenv": "^10.0.0",
+    "ethers": "^5.5.2",
+    "hardhat": "^2.8.0",
+    "hardhat-contract-sizer": "^2.5.0",
+    "hardhat-gas-reporter": "^1.0.6",
+    "truffle": "^5.4.26",
+    "truffle-contract-size": "^2.0.1",
+    "truffle-plugin-verify": "^0.5.20",
+    "ts-node": "^10.4.0",
+    "typechain": "^6.1.0",
+    "typescript": "^4.5.4"
+  },
+  "devDependencies": {
+    "@types/mocha": "^9.0.0",
+    "chai": "^4.3.4",
+    "ethereum-waffle": "^3.4.0"
+  }
+}
