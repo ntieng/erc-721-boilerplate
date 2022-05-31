@@ -6,14 +6,14 @@ import "@openzeppelin/contracts-upgradeable/access/OwnableUpgradeable.sol";
 import "@openzeppelin/contracts-upgradeable/proxy/utils/Initializable.sol";
 import "@openzeppelin/contracts-upgradeable/proxy/utils/UUPSUpgradeable.sol";
 
-contract SimpleTransparentToken is Initializable, ERC721Upgradeable, OwnableUpgradeable, UUPSUpgradeable {
+contract SimpleUUPSToken is Initializable, ERC721Upgradeable, OwnableUpgradeable, UUPSUpgradeable {
     /// @custom:oz-upgrades-unsafe-allow constructor
     constructor() {
         _disableInitializers();
     }
 
     function initialize() initializer public {
-        __ERC721_init("SimpleTransparentToken", "STK");
+        __ERC721_init("SimpleUUPSToken", "SUT");
         __Ownable_init();
         __UUPSUpgradeable_init();
     }
@@ -22,7 +22,7 @@ contract SimpleTransparentToken is Initializable, ERC721Upgradeable, OwnableUpgr
         return "https://test/{id}";
     }
 
-    function safeMint(address to, uint256 tokenId) public onlyOwner {
+    function safeMintV1(address to, uint256 tokenId) public onlyOwner {
         _safeMint(to, tokenId);
     }
 

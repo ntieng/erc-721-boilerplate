@@ -6,14 +6,14 @@ import "@openzeppelin/contracts-upgradeable/access/OwnableUpgradeable.sol";
 import "@openzeppelin/contracts-upgradeable/proxy/utils/Initializable.sol";
 import "@openzeppelin/contracts-upgradeable/proxy/utils/UUPSUpgradeable.sol";
 
-contract SimpleTransparentToken is Initializable, ERC721Upgradeable, OwnableUpgradeable, UUPSUpgradeable {
+contract SimpleUUPSTokenV2 is Initializable, ERC721Upgradeable, OwnableUpgradeable, UUPSUpgradeable {
     /// @custom:oz-upgrades-unsafe-allow constructor
     constructor() {
         _disableInitializers();
     }
 
     function initialize() initializer public {
-        __ERC721_init("SimpleTransparentToken", "STK");
+        __ERC721_init("SimpleUUPSToken", "SUT");
         __Ownable_init();
         __UUPSUpgradeable_init();
     }
